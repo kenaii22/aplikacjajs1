@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Numerki</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="render.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar has-shadow is-white">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="assets/logo.png" alt="logo strony" style="max-height: 50px" class="py-2 px-2">
+        </a>
+
+        <a class="navbar-burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+      </div>
+
+      <div class="navbar-menu" id="nav-links">
+        <div class="navbar-end">
+          <a class="navbar-item">Moje konto</a>
+          <a class="navbar-item">Support</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <script src="index1.js"></script>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half has-text-centered mt-6 pt-6">
+            <h1 class="is-size-5">Twój numerek to:</h1>
+            <h2 id="output" class="has-text-weight-bold is-size-1 has-text-info-dark py-4">-</h2>
+            <button class="button is-primary">Odbierz numerek</button>
+            <script src="render.js"></script>
+          </div>
+          <div class="column">
+            <div id="card" class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Numerki oczekujące
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </header>
+              <div class="card-content">
+                <div id="num" class="table-data">
+                  <table class="table" id="table">
+                    <thead>
+                        <th>Numer</th>
+                        <th>Czas w gabinecie</th>
+                    </thead>
+                    <% for(var i=0; i<numery.length;i++) { %>
+                      <tr>
+                        <td><%= numery[i].numery %></td>
+                        <td></td>
+                      </tr>
+                    <% } %>
+                </table>
+                <button id="update-btn" class="button">Odśwież</button>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
+    <script src="dbb.js"></script>
+  </body>
+</html>
